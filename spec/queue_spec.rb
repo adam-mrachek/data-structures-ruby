@@ -27,4 +27,17 @@ describe QueueClass do
     expect(queue.items.first).to eq "foo"
   end
 
+  it 'allows for iteration' do
+    queue.enqueue("foo")
+    queue.enqueue("bar")
+    queue.enqueue("foobar")
+
+    actual = []
+    queue.each do |item|
+      actual << item
+    end
+
+    expect(actual).to eq ["foo", "bar", "foobar"]
+  end
+
 end

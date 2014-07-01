@@ -22,4 +22,10 @@ class QueueClass
     @items.last
   end
 
+  def each
+    @items.each do |item|
+      yield item
+    end
+  end
+
 end
